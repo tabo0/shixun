@@ -1,0 +1,50 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.oracle</groupId>
+  <artifactId>zhuxiaomishop</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>zhuxiaomishop Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <dependencies>
+	<!-- Servlet jsp jstl -->
+	<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>javax.servlet-api</artifactId>
+		<version>3.0.1</version>
+		<scope>provided</scope>
+	</dependency>
+	<dependency>
+		<groupId>javax.servlet.jsp</groupId>
+		<artifactId>jsp-api</artifactId>
+		<version>2.1</version>
+		<scope>provided</scope>
+	</dependency>
+	<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>jstl</artifactId>
+		<version>1.2</version>
+	</dependency>
+    
+    
+  </dependencies>
+  <build>
+    <finalName>zhuxiaomishop</finalName>
+    <!-- 配置插件 配置jdk为1.8 -->
+    <plugins>
+ 	    <plugin>
+             <groupId>org.apache.maven.plugins</groupId>
+             <artifactId>maven-compiler-plugin</artifactId>
+             <version>2.5.1</version>
+             <configuration>
+                 <source>1.8</source>
+                 <target>1.8</target>
+                 <compilerArgument>-Xlint:all</compilerArgument>
+                 <showWarnings>true</showWarnings>
+                 <showDeprecation>true</showDeprecation>
+             </configuration>
+         </plugin>
+    </plugins>
+  </build>
+</project>

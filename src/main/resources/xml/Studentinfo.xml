@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.accp.dao.StudentinfoDao">
+
+    <select id="queryStudent" resultType="Studentinfo">
+        select * from studentinfo;
+    </select>
+
+    <select id="getByStudentId" resultType="Studentinfo">
+        select * from studentinfo where sid = #{sid}
+    </select>
+
+    <insert id="addStudentinfo">
+        insert into studentinfo value (default ,#{sname},#{sgender},#{sage},#{saddress},#{semail})
+    </insert>
+
+    <delete id="deleteStudentinfo">
+        delete from studentinfo where sid = #{sid}
+    </delete>
+
+    <update id="updateStudentinfo">
+        update studentinfo
+        <trim prefix="set" suffixOverrides="," suffix="where sid=#{sid}">
+            <if test="sname!=null">sname = #{sname},</if>
+            <if test="sgender!=null">sgender = #{sgender},</if>
+            <if test="sage!=null">sage = #{sage},</if>
+            <if test="saddress!=null">saddress = #{saddress},</if>
+            <if test="semail!=null">semail = #{semail},</if>
+        </trim>
+    </update>
+</mapper>
